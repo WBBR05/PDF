@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stiahnuť PDF</title>
+</head>
+<body>
+  <!-- Odkaz na stiahnutie PDF -->
+  <a id="downloadLink" href="#" download="moj-pdf.pdf">Stiahnuť PDF</a>
+
+  <!-- Importujte knižnicu jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+
+  <!-- JavaScript kód na generovanie PDF a nastavenie odkazu na stiahnutie -->
+  <script>
+    // Funkcia na generovanie PDF
+    function generatePDF() {
+      // Vytvorte novú inštanciu objektu jsPDF
+      const doc = new jsPDF();
+
+      // Pridajte obsah do PDF
+      doc.text('Vitajte vo svojom prvom PDF!', 10, 10);
+
+      // Uložte PDF súbor do base64 reťazca
+      const pdfData = doc.output('dataurlstring');
+
+      // Nastavte href odkazu na stiahnutie PDF súboru
+      document.getElementById('downloadLink').href = pdfData;
+    }
+
+    // Volanie funkcie generatePDF() pri načítaní stránky (voliteľné)
+    generatePDF();
+  </script>
+</body>
+</html>

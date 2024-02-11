@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>    
+    <script>
+        const { jsPDF } = jspdf;
+        const doc = new jsPDF();
+        const image = new Image();
+//Hlavinčka
+        doc.setFont('Arial');
+        doc.setFontSize(20);
+        doc.setFont('bold');
+        doc.text('MATERSKÁ ŠKOLA', doc.internal.pageSize.width / 2, 13, { align: "center" });
+        doc.setLineWidth(1);
+        doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height);
+        doc.stroke();
+        doc.setLineWidth(0.5);
+        doc.line(0, 20, 300, 20);
+
+        image.src = "obr/original.png";
+        doc.addImage(image, "png", 1, 1, 20, 20);
+
+        doc.setFontSize(10);
+        doc.setFont('bold');
+        const currentDate = new Date();
+        const formattedDate = `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}`;
+        doc.text(`K dátumu: ${formattedDate}`, 170, 12.3);
+
+//Body        
+        doc.setFont('normal');
+        const longText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam illo blanditiis pariatur harum quae! Ut nemo earum odio quia nam iusto, unde eius fuga, repudiandae libero nihil inventore eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam illo blanditiis pariatur harum quae! Ut nemo earum odio quia nam iusto, unde eius fuga, repudiandae libero nihil inventore eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam illo blanditiis pariatur harum quae! Ut nemo earum odio quia nam iusto, unde eius fuga, repudiandae libero nihil inventore eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam illo blanditiis pariatur harum quae! Ut nemo earum odio quia nam iusto, unde eius fuga, repudiandae libero nihil inventore eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam illo blanditiis pariatur harum quae! Ut nemo earum odio quia nam iusto, unde eius fuga, repudiandae libero nihil inventore eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laboriosam illo blanditiis pariatur harum quae! Ut nemo earum odio quia nam iusto, unde eius fuga, repudiandae libero nihil inventore eos?";
+              
+        doc.text(longText, 10, 30, { maxWidth: 100 });
+        doc.save("pdf.pdf");
+    </script>
+
+
+</body>
+</html>
