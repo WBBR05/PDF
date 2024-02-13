@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF</title>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="button" onclick="generatePDF()">Stiahnuť PDF</button>
     <div id="ramcek">
         <div id="pdf">
             <div id="header">
@@ -22,11 +22,38 @@
                 <div id="p1-body">
                     <div id="Ingrediencie">
                         <h3>Ingerdiencie:</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, eos est illum quos quidem non deleniti reprehenderit tenetur vitae ab fugit, atque quaerat nesciunt soluta itaque autem, tempora iste quasi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus est voluptate dolores sapiente autem amet dolorem. Officiis rerum id magnam, corrupti commodi minima, eos deleniti velit maiores animi expedita nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolore! Totam, distinctio sit! Recusandae ullam magni mollitia, modi, qui amet iste sint voluptatem similique corporis dignissimos, omnis tempora repellendus facilis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque maxime in obcaecati dolore ipsum cum repudiandae provident nemo beatae expedita ducimus labore perferendis veritatis, rem alias vitae laborum perspiciatis dignissimos. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet earum reiciendis corporis excepturi harum est explicabo, ratione temporibus dignissimos consequatur, qui repellat facere cum pariatur inventore magni consectetur, dolorem quasi!</p>
+                        <p><h4><strong>Bageta so šunkou</strong></h4>
+                            Bageta (30 cm)
+
+                            Náplň:
+                            
+                            Šunka 80 g
+                            
+                            Paprika farebná 80 g
+                            
+                            Syrokrém 80 g
+                            
+                            1-2 strúčiky cesnaku</p>
                     </div>
                     <div id="Postup">
                         <h3>Postup:</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, eos est illum quos quidem non deleniti reprehenderit tenetur vitae ab fugit, atque quaerat nesciunt soluta itaque autem, tempora iste quasi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus est voluptate dolores sapiente autem amet dolorem. Officiis rerum id magnam, corrupti commodi minima, eos deleniti velit maiores animi expedita nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolore! Totam, distinctio sit! Recusandae ullam magni mollitia, modi, qui amet iste sint voluptatem similique corporis dignissimos, omnis tempora repellendus facilis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque maxime in obcaecati dolore ipsum cum repudiandae provident nemo beatae expedita ducimus labore perferendis veritatis, rem alias vitae laborum perspiciatis dignissimos. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet earum reiciendis corporis excepturi harum est explicabo, ratione temporibus dignissimos consequatur, qui repellat facere cum pariatur inventore magni consectetur, dolorem quasi!</p>
+                        <p>Nachystáme si bagetu.Uvedené množstvo je na jednu bagetu, ak chcete viac, musíte množstvo prísad zvýšiť.
+
+                            Rozkrojíme ju a odrežeme konce.Vyberieme z nej mäkké vnútro.
+
+                            Nachystáme si náplň:
+                            
+                            Papriku nakrájame nadrobno.Pridáme šunku, ktorú taktiež nakrájame nadrobno.
+
+                            Nakoniec vmiešame aj syrokrém, alebo iný smotanový syr.
+                            Ja pridávam aj lyžičku horčice – podľa chuti.
+
+Nachystáme si dlhšiu lyžičku na plnenie.Náplň navrstvíme do vnútra bagety.Nakrájame na kolieska.
+
+Môžeme podávať.
+
+Zabalíme do fólie a necháme vychladiť.
+                             </p>   
                     </div>
                 </div>
                 <div id="p1">
@@ -56,6 +83,7 @@
                     </div>
             </div>
         <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     </div>
 </body>
 </html>
